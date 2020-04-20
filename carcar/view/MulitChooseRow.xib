@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MulitChooseCell" id="KGk-i7-Jjw" customClass="MulitChooseRow" customModule="carcar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zge-7b-jaj">
+                        <rect key="frame" x="30" y="11.5" width="43" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                        <color key="textColor" name="gold-2"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3y-g9-zrc">
+                        <rect key="frame" x="98" y="11" width="42.5" height="22"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                        <color key="textColor" name="greyblue-5"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGb-A7-s8e">
+                        <rect key="frame" x="300" y="14.5" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="U5K-w2-iNx"/>
+                            <constraint firstAttribute="width" constant="15" id="tpJ-bp-8tz"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="arrow"/>
+                        <connections>
+                            <action selector="clickToSeeMore:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aTt-aS-IF0"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Q3y-g9-zrc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2w7-yX-mgu"/>
+                    <constraint firstItem="PGb-A7-s8e" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="B1s-im-0z7"/>
+                    <constraint firstItem="Q3y-g9-zrc" firstAttribute="leading" secondItem="zge-7b-jaj" secondAttribute="trailing" constant="25" id="FXy-Jh-7Cu"/>
+                    <constraint firstItem="PGb-A7-s8e" firstAttribute="leading" secondItem="Q3y-g9-zrc" secondAttribute="trailing" constant="20" id="g5I-cT-HeH"/>
+                    <constraint firstItem="zge-7b-jaj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="iJb-YC-WkI"/>
+                    <constraint firstItem="zge-7b-jaj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="va1-ox-Xkc"/>
+                    <constraint firstAttribute="trailing" secondItem="PGb-A7-s8e" secondAttribute="trailing" constant="5" id="xiW-Gs-pFb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="answer" destination="Q3y-g9-zrc" id="g9L-ob-fa6"/>
+                <outlet property="label" destination="zge-7b-jaj" id="CNh-kk-Plr"/>
+            </connections>
+            <point key="canvasLocation" x="89.855072463768124" y="107.8125"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow" width="31" height="36"/>
+        <namedColor name="gold-2">
+            <color red="0.74500000476837158" green="0.54900002479553223" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greyblue-5">
+            <color red="0.093999996781349182" green="0.15700000524520874" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
