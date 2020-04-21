@@ -21,13 +21,14 @@ class CarDetailViewController: UITableViewController {
     var task : [taskInfo] = []
     var people : [String] = []
     var selected : DocumentReference? = nil
-
-    
+    var lastTask : QueryDocumentSnapshot? = nil
+    var allShow: Bool = false
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "taskListCell", bundle: nil), forCellReuseIdentifier: "taskCell")
+   
     }
     
     
@@ -39,7 +40,7 @@ class CarDetailViewController: UITableViewController {
     func getdata(){
         if  self.carref != nil {
             let ref = self.carref!
-            ref.getDocument { (document, error) in
+            ref.getDocument{ (document, error) in
                 if let document = document, document.exists {
                     let data = document.data()
                     if let people = data?["role"] as? [String:Any] {
@@ -94,8 +95,11 @@ class CarDetailViewController: UITableViewController {
                 
             }
             self.task = []
-            ref.collection(K.FStore.taskList).order(by: "startTime",descending: true).limit(to: 10)
-                .getDocuments() { (querySnapshot, err) in
+            let firstBatch = ref.collection(K.FStore.taskList)
+//                .order(by: "status",descending: true)
+                .order(by: "startTime",descending: true)
+                .limit(to: 15)
+                firstBatch.getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
@@ -104,15 +108,51 @@ class CarDetailViewController: UITableViewController {
                         self.task.append(newtask)
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
-                          
                                                }
                         }
+                    if let lastSnapshot = querySnapshot!.documents.last {
+                        self.lastTask = lastSnapshot
+                       
+                    }
                     }
                 }
+            
+            
             }
 
         }
         
+    
+    func getNextBatch(){
+        if  self.carref != nil , let lastDoc = self.lastTask {
+        let ref = self.carref!
+       ref.collection(K.FStore.taskList)
+            //                .order(by: "status",descending: true)
+                            .order(by: "startTime",descending: true)
+                            .limit(to: 5)
+                            .start(afterDocument:lastDoc)
+                            .getDocuments() { (querySnapshot, err) in
+                            if let err = err {
+                                print("Error getting documents: \(err)")
+                            } else {
+                                if querySnapshot?.count == 0 {
+                                    self.allShow = true
+                                }
+                                for doc in querySnapshot!.documents {
+                                    let newtask = taskInfo(doc:doc)
+                                    self.task.append(newtask)
+                                    DispatchQueue.main.async {
+                                        self.tableView.reloadData()
+                                                           }
+                                    }
+                                if let lastSnapshot = querySnapshot!.documents.last {
+                                                       self.lastTask = lastSnapshot
+                                   
+                                                   }
+                                }
+                            }
+        }
+    }
     
         @IBAction func editTapped(_ sender: Any) {
             let alert = UIAlertController(title: nil, message:nil , preferredStyle: .actionSheet)
@@ -252,5 +292,16 @@ class CarDetailViewController: UITableViewController {
         performSegue(withIdentifier: "seeTask", sender: self)
     }
          
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 && !self.allShow {
+            let lastElement = self.task.count - 1
+            if indexPath.row == lastElement {
+                getNextBatch()
+            }
+        }
+        
     }
 }
