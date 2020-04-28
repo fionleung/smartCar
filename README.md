@@ -11,7 +11,8 @@ Description:<br />
 
 . car managemet: view car info, add car, edit car, disable car<br />
 ![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/carlist.PNG)
-![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/tasklist.jpg){:height="50%" width="50%"}
-![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/tasklist.jpg)
-![image info]()
-![image info]()
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/cardetail.PNG)
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/caradd.PNG)
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/cardisable.PNG)
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/carupdate.PNG)
+
