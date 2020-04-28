@@ -26,7 +26,7 @@ class HomeViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
          
-        title = "View Cars"
+        title = "Your Cars"
         navigationItem.hidesBackButton = true
         tableView.register(UINib(nibName: "LabelCell", bundle: nil), forCellReuseIdentifier: "labelcell")
         tableView.dataSource = self

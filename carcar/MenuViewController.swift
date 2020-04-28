@@ -10,6 +10,15 @@ import UIKit
 import Firebase
 
 class MenuViewController: UITableViewController{
+    
+    @IBOutlet weak var userName: UILabel!
+    
+    override func viewDidLoad() {
+           super.viewDidLoad()
+            
+        self.userName.text = Auth.auth().currentUser?.email
+       }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true

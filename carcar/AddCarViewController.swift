@@ -24,6 +24,9 @@ class AddCarViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Add a Car"
+        if self.editMood {
+            title = "Update Car Info"
+        }
         createForm()
     }
     

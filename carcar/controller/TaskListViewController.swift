@@ -20,7 +20,7 @@ class TaskListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        title = "Your Tasks"
     }
     
     override func viewWillAppear(_ animated: Bool) {
