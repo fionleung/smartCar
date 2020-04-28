@@ -23,7 +23,13 @@ Description:<br />
 
 .access control:only car owers could edit/disable car, others could only use the car. only task owner could view/cancel tasks, other car users don't have access<br />
 ![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/permitcar.png)
-![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/permitcar2.png)<br />
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/permitcar2.PNG)<br />
 ![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/permitadd.PNG)
 ![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/permitstask.PNG)
+
+.varity of forms and form vailidation<br />
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/map.PNG)
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/date.PNG)
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/mulitichoice.PNG)
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/validation.PNG)
 
