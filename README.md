@@ -1,9 +1,9 @@
 # smartCar
 
-Description:
-. iOS app for autonomy management
-. Swift 5 + firestore + cocoapods
-. support user managements : login, log out, regesiter
+Description:<br />
+. iOS app for autonomy management<br />
+. Swift 5 + firestore + cocoapods<br />
+. support user managements : login, log out, regesiter<br />
 
 ![image info](./carcar/app images/signin.PNG)
 
