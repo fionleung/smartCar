@@ -16,3 +16,7 @@ Description:<br />
 ![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/cardisable.PNG)
 ![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/carupdate.PNG)
 
+. task managemet: add, view, cancel task<br />
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/tasklist.PNG)
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/tasknew.PNG)
+![image info](https://github.com/fionleung/smartCar/blob/master/carcar/app%20images/taskcancel.PNG)
